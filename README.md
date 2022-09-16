@@ -8,7 +8,7 @@ pip install pydpomdp
 ```
 
 ## Examples
-```
+```python
 from pydpomdp import DecPOMDP
 d = DecPOMDP("dectiger.dpomdp")
 
