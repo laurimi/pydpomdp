@@ -41,7 +41,8 @@ individual_observations = d.joint_to_individual_observation_indices(joint_observ
 d.individual_to_joint_observation_indices(individual_observations) # equals joint_observation
 
 # Rewards, state transition and observation probabilities.
-# s is current state, s' is new state after taking joint action a, z' is joint observation received in new state
+# s is current state, s' is new state after taking joint action a, 
+# z' is joint observation received in new state
 state = 0
 joint_action = 1
 new_state = 1
