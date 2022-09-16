@@ -8,6 +8,12 @@ pip install pydpomdp
 ```
 
 ## Examples
+Before starting, download a problem file, for example: 
+```
+wget https://www.st.ewi.tudelft.nl/mtjspaan/decpomdp/dectiger.dpomdp
+```
+
+The following script shows the functionality of this package.
 ```python
 from pydpomdp import DecPOMDP
 d = DecPOMDP("dectiger.dpomdp")
