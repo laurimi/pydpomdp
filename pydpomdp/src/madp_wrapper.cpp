@@ -118,6 +118,20 @@ unsigned int MADPDecPOMDPDiscrete::sample_observation(unsigned int state, unsign
   }
 }
 
+unsigned int MADPDecPOMDPDiscrete::sample_initial_state(double d) const
+{
+  if (d < 0.0 || d >= 1.0)
+    throw std::domain_error("double input must be in the range [0,1)");
+
+  double sum = 0.0;
+  for (unsigned int i = 0; i < num_states(); ++i)
+  {
+    sum += initial_belief_at(i);
+    if (d <= sum)
+      return i;
+  }
+}
+
 std::string MADPDecPOMDPDiscrete::soft_print() const
 {
   return pimpl_->d_->SoftPrint();

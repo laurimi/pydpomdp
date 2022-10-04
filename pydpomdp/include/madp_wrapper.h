@@ -35,6 +35,7 @@ class MADPDecPOMDPDiscrete {
                                 unsigned int j_act) const;
   unsigned int sample_next_state(unsigned int state, unsigned int j_act, double d) const;
   unsigned int sample_observation(unsigned int state, unsigned int j_act, double d) const;
+  unsigned int sample_initial_state(double d) const;
   std::string soft_print() const;
  private:
   class MADPDecPOMDPDiscrete_impl;

@@ -62,6 +62,7 @@ d.observation_probability(joint_observation, new_state, joint_action) # P(z' | s
 
 # Sampling new states and observations
 import random
+state = d.sample_initial_state(random.random())
 new_state = d.sample_next_state(state, joint_action, random.random())
 d.sample_observation(new_state, joint_action, random.random())
 ```

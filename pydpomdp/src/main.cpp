@@ -78,6 +78,10 @@ PYBIND11_MODULE(pydpomdp, m) {
            &pydpomdp::MADPDecPOMDPDiscrete::sample_observation,
            "Sample the joint observation given the state and previous joint action and a random floating point number in the range [0,1)",
            py::arg("state"), py::arg("joint_action"), py::arg("d"))
+     .def("sample_initial_state",
+           &pydpomdp::MADPDecPOMDPDiscrete::sample_initial_state,
+           "Sample the initial state given a random floating point number in the range [0,1)",
+           py::arg("d"))
       .def("__repr__", &pydpomdp::MADPDecPOMDPDiscrete::soft_print,
            "Print human-readable description of the Dec-POMDP");
 
