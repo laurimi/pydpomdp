@@ -36,8 +36,16 @@ class CMakeBuild(build_ext):
         if not extdir.endswith(os.path.sep):
             extdir += os.path.sep
 
+        try:
+            import pybind11
+        except ImportError:
+            print("Successful installation of ``pydpomdp'' requires ``pybind11''. Exiting.")
+            exit(-1)
+
         cmake_args = ['-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=' + extdir,
-                      '-DPYTHON_EXECUTABLE=' + sys.executable]
+                      '-DPYTHON_EXECUTABLE=' + sys.executable,
+                      '-Dpybind11_DIR=' + pybind11.get_cmake_dir()
+                     ]
 
         cfg = 'Debug' if self.debug else 'Release'
         build_args = ['--config', cfg]
